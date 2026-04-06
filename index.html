@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>IMS Dashboard</title>
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="layout">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <h2>IMS</h2>
+    <ul>
+      <li class="active">Dashboard</li>
+      <li>Inventory</li>
+      <li>Reports</li>
+      <li>Users</li>
+    </ul>
+  </aside>
+
+  <!-- Main -->
+  <div class="main">
+
+    <!-- Topbar -->
+    <div class="topbar">
+      <input type="text" id="search" placeholder="Search items..." onkeyup="searchItem()">
+      <button onclick="logout()">Logout</button>
+    </div>
+
+    <!-- Cards -->
+    <div class="cards">
+      <div class="card">Total Items <span id="count">0</span></div>
+      <div class="card">Low Stock <span>0</span></div>
+      <div class="card">Transactions <span>0</span></div>
+    </div>
+
+    <!-- Section -->
+    <div class="section">
+      <h3>Inventory</h3>
+
+      <!-- Form -->
+      <div class="form">
+        <input id="itemName" placeholder="Item Name">
+        <input id="itemQty" type="number" placeholder="Quantity">
+        <button onclick="addItem()">Add Item</button>
+      </div>
+
+      <!-- Table -->
+      <table>
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Quantity</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="table"></tbody>
+      </table>
+    </div>
+
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
